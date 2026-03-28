@@ -1,14 +1,14 @@
 # 📅 Daily DSA Grind
 
-🔥 Auto-generated coding problems + solutions
+Consistent daily practice of data structures and algorithms.
 
-## 📊 Stats
+## 📊 Progress
 - Total Problems Solved: 1
-- Current Difficulty: Easy
+- Current Focus: Easy
 
-## 📂 Structure
+## 📂 Repository Structure
 - problems/ → problem statements
-- solutions/ → optimal code
+- solutions/ → implementations
 
-## 🚀 Goal
-Consistent daily DSA practice for placements
+## 🎯 Objective
+Building strong problem-solving skills through daily practice.
