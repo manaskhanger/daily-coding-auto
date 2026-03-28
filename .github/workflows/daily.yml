@@ -2,7 +2,6 @@ name: Daily Coding Problem
 
 on:
   schedule:
-    # Multiple runs per day (backup triggers)
     - cron: '0 0 * * *'     # 5:30 AM IST
     - cron: '0 6 * * *'     # 11:30 AM IST
     - cron: '0 12 * * *'    # 5:30 PM IST
@@ -35,15 +34,32 @@ jobs:
             sleep 5
           done
 
-      - name: Commit changes if any
+      - name: Commit changes with human-like message
         run: |
-          git config --global user.name "Manas"
-          git config --global user.email "manas@example.com"
+          git config --global user.name "manaskhanger"
+          git config --global user.email "khangermanas@gmail.com"
           git add .
 
           if git diff --cached --quiet; then
             echo "No changes today"
           else
-            git commit -m "Daily DSA practice $(date +'%Y-%m-%d')"
+            # Get latest problem file
+            FILE=$(ls problems | sort | tail -n 1)
+
+            # Extract problem title
+            TITLE=$(head -n 1 problems/$FILE | sed 's/# //' | cut -d '(' -f1)
+
+            # Human-like commit messages
+            messages=(
+              "Solved $TITLE"
+              "Worked on $TITLE problem"
+              "Practiced $TITLE"
+              "DSA practice: $TITLE"
+              "Solved a $TITLE problem today"
+            )
+
+            RANDOM_MSG=${messages[$RANDOM % ${#messages[@]}]}
+
+            git commit -m "$RANDOM_MSG"
             git push
           fi
