@@ -4,7 +4,7 @@ Consistent daily practice of data structures and algorithms.
 
 ## 📊 Progress
 - Total Problems Solved: 10
-- Current Focus: Easy
+- Current Focus: Medium
 
 ## 📂 Repository Structure
 - problems/ → problem statements
