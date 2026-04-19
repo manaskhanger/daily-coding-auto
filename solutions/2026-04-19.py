@@ -1,11 +1,3 @@
-# Longest Substring Without Repeating Characters (Medium)
+# Search in Rotated Sorted Array (Medium)
 
-def longest_substring(s):
-    seen = {}
-    l = res = 0
-    for r in range(len(s)):
-        if s[r] in seen:
-            l = max(l, seen[s[r]] + 1)
-        seen[s[r]] = r
-        res = max(res, r - l + 1)
-    return res
+print('Solution coming soon')
